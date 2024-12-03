@@ -1,0 +1,690 @@
+:root {
+    --box-shadow: 0 2px 8px 4px rgba(0,0,0,0.15);
+    --off-black: #111111;
+    --red: #9F001A;
+}
+
+/* Utility Classes */
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+/* Typography */
+@font-face {
+    font-family: 'Chronicle Display';
+    src: url('fonts/Chronicle\ Display\ Roman.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+h2 {
+    font-family: 'Chronicle Display';
+}
+
+/* Universal Styles */
+body {
+    color: var(--off-black);
+    line-height: 1.5;
+    font-family: 'Libre Franklin', sans-serif;
+}
+
+/* Header */
+header {
+    padding: 1.25rem 1rem;
+    position: relative;
+}
+
+header a {
+    text-decoration: none;
+    color: var(--off-black);
+
+}
+
+header h1 {
+    font-family: 'Chronicle Display';
+    font-size: 1.5rem;
+}
+
+header div.header-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: center;
+}
+
+header .toggle-btn {
+    min-width: 9mm;
+    background-color: unset;
+    border: none;
+    font-size: 0.825rem;
+    cursor: pointer;
+}
+
+svg {
+    display: block;
+    width: 2rem;
+}
+
+header nav {
+    position: absolute;
+    background-color: white;
+    width: 100%;
+    z-index: 10;
+    left: 0;
+    top: 4.5rem;
+    transform-origin: top;
+}
+
+nav ul:first-child {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding: 1rem 0 2rem;
+    margin: 0;
+}
+
+.dropdown {
+    margin: 0 0 0 2rem;
+}
+
+nav ul li:first-child {
+    display: flex;
+}
+
+nav ul li svg {
+    width: 1rem;
+    display: none;
+}
+
+nav div.svg-container {
+    padding: 2.25rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.svg-container div {
+    cursor: pointer;
+}
+
+.svg-container svg {
+    margin: 0 auto;
+}
+
+nav a {
+    display: block;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+}
+
+.collapsed {
+    transition: all 0.3s;
+    transform: scaleY(0);
+}
+
+.expanded {
+    transform: scaleY(1);
+}
+
+/* Hero */
+.hero {
+    height: calc(100vh - 5rem);
+    margin-bottom: 6rem;
+}
+
+.hero-img,
+.hero-desc {
+    height: 50%;
+    width: 100%;
+}
+
+.hero-img {
+    background: url('../img/hero/two-bunnies-sm.webp') center / cover;
+    display: flex;
+    align-items: flex-end;
+}
+
+.hero-img-content,
+.hero-desc-content {
+    padding: 0 1rem;
+}
+
+.hero-img-content h2 {
+    font-size: 2.25rem;
+    color: white;
+}
+
+.hero-desc {
+    background-color: var(--red);
+}
+
+.hero-desc-content {
+    position: relative;
+}
+
+.hero-desc h2 {
+    font-size: 2.25rem;
+    margin-bottom: 1.875rem;
+}
+
+.hero-desc p {
+    font-size: 1.25rem;
+    margin-bottom: 2.25rem;
+}
+
+.hero-desc .btn {
+    color: white;
+    background-color: black;
+    position: absolute;
+    right: 1rem;
+}
+
+.btn {
+    font-family: 'Chronicle Display';
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 375;
+    display: block;
+    width: 15rem;
+    height: 4.5rem;
+    text-align: center;
+    align-content: center;
+    border-radius: 0.25rem;
+    transition: background-color 0.1s ease-in;
+}
+
+/* Section 1 */
+.img-container {
+    position: relative;
+    height: 17.5rem;
+    max-width: 24rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.img-container picture:last-of-type {
+    position: absolute;
+    right: 1rem;
+    bottom: 0rem;
+}
+
+.text-container {
+    padding: 4rem 1rem 6rem;
+}
+
+.text-container h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.text-container p:not(:last-of-type) {
+    margin-bottom: 1rem;
+}
+
+.text-container .btn {
+    color: white;
+    background-color: black;
+    margin: 2.25rem 0 0 0;
+}
+
+/* Section 2 */
+.section-2 .text-container {
+    background-color: black;
+    color: white;
+}
+
+.section-2 .btn {
+    background-color: white;
+    color: black;
+    margin: 2.25rem 0 0 0;
+}
+
+/* Section 3 */
+.section-3 {
+    padding: 6rem 1rem;
+}
+
+.section-3 h2 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 3rem;
+}
+
+.package-description {
+    margin-bottom: 4.5rem;
+}
+
+.package-description p:not(:last-of-type) {
+    margin-bottom: 1rem;
+}
+
+/* Cards */
+.card {
+    border: 1px solid black;
+    border-radius: 0.25rem;
+    box-shadow: var(--box-shadow);
+    max-width: 30rem;
+    min-width: 20rem;
+}
+
+.card p:first-of-type {
+    font-size: 2rem;
+    padding: 2.25rem 0;
+    font-family: 'Chronicle Display';
+}
+
+.card p:nth-of-type(2),
+.card p.details {
+    padding: 0 1rem;
+}
+
+.card p {
+    text-align: center;
+}
+
+.card ul {
+    margin: 0 0 2.25rem 0;
+}
+
+.card ul li {
+    text-align: center;
+    line-height: 2rem;
+}
+
+.card-header {
+    background-color: black;
+    border-radius: 0.25rem 0.25rem 0 0;
+}
+
+.card-header h3 {
+    font-family: 'Chronicle Display';
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 1.2rem 0;
+    color: white;
+}
+
+.card-content .btn {
+    background-color: black;
+    color: white;
+    margin: 3rem auto;
+}
+
+.card p.details {
+    text-align: left;
+}
+
+.card:nth-of-type(2) {
+    position: relative;
+}
+
+.card:nth-of-type(2) span {
+    position: absolute;
+    display: block;
+    background-color: var(--red);
+    width: 6rem;
+    height: 2.25rem;
+    text-align: center;
+    align-content: center;
+    color: white;
+    border-radius: 1rem;
+    top: -1rem;
+    right: -0.75rem;
+    font-weight: 500;
+}
+
+hr {
+    margin: 2.25rem 0;
+}
+
+sup {
+    font-size: x-small;
+}
+
+/* Footer */
+footer {
+    background-color: black;
+    padding: 6rem 1rem;
+    color: white;
+    font-family: 'Libre Franklin';
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+}
+
+.disclaimer {
+    text-align: center;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid white;
+}
+
+footer h2 {
+    font-family: 'Chronicle Display';
+}
+
+.disclaimer h2,
+.disclaimer p:first-of-type {
+    margin-bottom: 1.5rem;
+}
+
+.contact-info {
+    padding: 3rem 0 3rem 0;
+}
+
+.contact-info h3,
+.contact-info p {
+    margin-bottom: 0.5rem;
+}
+
+.contact-info div:first-of-type {
+    margin-bottom: 2rem;
+}
+
+.links-container h3 {
+    margin-bottom: 0.75rem;
+}
+
+footer ul {
+    margin: 0;
+}
+
+footer li {
+    margin-bottom: 0.5rem;
+}
+
+.links-container div:not(:last-of-type) {
+    margin-bottom: 3rem;
+}
+
+.btn:not(.hero .btn):hover {
+    background-color: var(--red);
+}
+
+.svg-container svg:hover,
+.svg-container div:hover {
+    stroke: var(--red);
+    color: var(--red);
+}
+
+
+@media screen and (min-width: 520px) {
+    /* Header */
+    header {
+        padding: 1.25rem 3rem;
+    }
+
+    /* Hero Banner */
+    .hero-img {
+        height: 55%;
+        background-image: url('../img/hero/two-bunnies-med.webp');
+        background-size: cover;
+    }
+
+    .hero-desc {
+        height: 45%;
+    }
+
+    .hero h2 {
+        font-size: 4rem;
+    }
+
+    .hero-img-content,
+    .hero-desc-content {
+        max-width: 32rem;
+        margin: 0 0 0 3rem;
+    }
+
+    .hero-desc-content .btn {
+        bottom: -5rem;
+    }
+
+    /* Section 1 */
+    .section-1 .img-container,
+    .section-1 .text-container {
+        max-width: 29.5rem;
+        margin: 0 auto;
+    }
+
+    .img-container {
+        height: 24rem;
+    }
+
+    .img-container picture:last-of-type {
+        bottom: 0;
+    }
+    /* Section 2 */
+    .section-2 {
+        display: flex;
+    }
+
+    .section-2 img {
+        order: 2;
+        max-width: 18.5rem;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .section-2 .text-container {
+        padding: 6rem 2.5rem 6rem 3rem;
+    }
+
+    /* Section 3 */
+    .section-3 {
+        padding: 6rem 1rem;
+        max-width: 29.5rem;
+        margin: 0 auto;
+    }
+
+    .card {
+        margin: 0 auto;
+        flex: 1;
+    }
+
+    .card p:nth-of-type(2) {
+        padding: 0 4rem;
+    }
+
+    .card p.details {
+        padding: 0 2.25rem;
+    }
+
+    /* Footer */
+    footer {
+        padding-left: 3rem;
+        padding-right: 3rem;    
+    }
+
+    .disclaimer {
+        padding-left: 10rem;
+        padding-right: 10rem;
+    }
+
+    .links-container {
+        display: flex;
+        flex-flow: row wrap;
+    }
+
+    .links-container div {
+        width: calc(50% - (1rem / 2));
+    }
+}
+
+@media screen and (min-width: 1180px) {
+    /* Header */
+    header {
+        padding: 1.25rem 6rem;
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+    nav.collapsed,
+    nav.expanded {
+        position: static;
+        transform: scaleY(1);
+        width: unset;
+    }
+
+    nav {
+        display: flex;
+        gap: 5rem;
+    }
+
+    nav ul:first-child {
+        display: flex;
+        position: relative;
+        border: none;
+        align-items: center;
+        padding: 0;
+    }
+
+    nav div.svg-container {
+        padding: 0;
+        margin-left: auto;
+    }
+
+    .dropdown {
+        position: absolute;
+        bottom: -8rem;
+        background-color: white;
+        margin: 0;
+    }
+
+    nav ul li svg {
+        display: unset;
+    }
+
+    /* Hero Banner */
+    .hero {
+        height: calc(120vh - 5rem);
+    }
+
+    .hero .btn {
+        bottom: -7rem;
+    }
+
+    .hero h2 {
+        font-size: 5rem;
+    }
+
+    .hero-img {
+        height: 60%;
+        background: url('../img/hero/two-bunnies-lrg.webp') center / cover;
+    }
+
+    .hero-desc {
+        height: 40%;
+    }
+
+    .hero-img-content,
+    .hero-desc-content {
+        max-width: 40rem;
+        margin: 0 0 0 6rem;
+    }
+    /* Section 1 */
+    .section-1 {
+        display: flex;
+        row-gap: 8rem;
+        padding: 0 0 6rem;
+    }
+
+    .section-1 h2 {
+        font-size: 3rem;
+    }
+
+    .section-1 .img-container {
+        height: 39rem;
+        width: 38rem;
+    }
+
+    .img-container picture:last-of-type {
+        right: -4rem;
+    }
+
+    .section-1 .text-container {
+        max-width: 38rem;
+    }
+
+    /* Section 2 */
+    .section-2 img {
+        max-width: 50%;
+        order: 2;
+    }
+
+    .section-2 .text-container {
+        padding: 7rem 6rem;
+        width: 50%;
+    }
+
+
+   /* Section 3 */
+   .section-3 {
+        padding: 7.5rem 6rem 4.5rem;
+        max-width: unset;
+   }
+
+   .package-description {
+       max-width: 40rem;
+       margin: 0 auto 4.5rem;
+   }
+
+   .card .btn {
+        margin: auto auto 3rem auto;
+   }
+
+   .card-content {
+        height: calc(100% - 4.65rem);
+        display: flex;
+        flex-direction: column;
+   }
+
+   .card:not(.card:nth-of-type(2)) {
+        height: 60rem;
+   }
+
+   .card:nth-of-type(2) {
+        height: 65rem;
+   }
+
+   .card p:nth-of-type(2) {
+        padding: 0 1rem;
+   }
+
+   .flex-container {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+   }
+
+    /* Footer */
+    footer {
+        padding-left: 6rem;
+        padding-right: 6rem;    
+    }
+
+    .lrg-flex {
+        display: flex;
+        gap: 5rem;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .disclaimer {
+        padding-left: 23rem;
+        padding-right: 23rem;
+    }
+
+    .links-container div {
+        width: unset;
+    }
+
+    .links-container {
+       gap: 2.5rem;
+       flex-wrap: nowrap;
+    }
+}
